@@ -1,13 +1,13 @@
-package vn.hoidanit.laptopshop;
+package vn.hoangson.pickerballshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LaptopshopApplication {
+public class PickerballApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LaptopshopApplication.class, args);
+		SpringApplication.run(PickerballApplication.class, args);
 	}
 
 }

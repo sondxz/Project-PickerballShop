@@ -27,8 +27,8 @@ Project được khởi tạo từ **Spring Initializr** và chuẩn hóa lại 
 src
  ├─ main
  │  ├─ java
- │  │  └─ vn.hoangson.laptopshop
- │  │     ├─ LaptopshopApplication.java
+ │  │  └─ vn.hoangson.pickerballshop
+ │  │     ├─ PickerballApplication.java
  │  │     ├─ controller
  │  │     ├─ service
  │  │     │  └─ impl
@@ -38,6 +38,9 @@ src
  │  └─ resources
  │     └─ application.properties
  └─ test
+    ├─ java
+    │  └─ vn.hoangson.pickerballshop
+    │     ├─ PickerballshopApplicationTests.java
 ```
 
 ---
