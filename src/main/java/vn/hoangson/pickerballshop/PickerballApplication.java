@@ -8,13 +8,7 @@ import org.springframework.context.ApplicationContext;
 public class PickerballApplication {
 
 	public static void main(String[] args) {
-
-		//container
-		ApplicationContext hoangson = SpringApplication.run(PickerballApplication.class, args);
-		for(String s: hoangson.getBeanDefinitionNames())
-		{
-			System.out.println(s);
-		}
+		SpringApplication.run(PickerballApplication.class, args);
 	}
 
 }
