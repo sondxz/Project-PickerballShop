@@ -1,10 +1,10 @@
 package vn.hoangson.pickerballshop.controller;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import vn.hoangson.pickerballshop.domain.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.ui.Model;
 import vn.hoangson.pickerballshop.service.UserService;
@@ -28,24 +28,14 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user")
-    public String postUserPage(Model model) {
+    public String getUserPage(Model model) {
+        model.addAttribute("newUser", new User());
         return "/admin/user/create";
     }
-    
+
+    @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
+    public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
+        System.out.println("Creating user..." + user);
+        return "hello";
+    }
 }
-
-// @RestController
-// public class UserController {
-
-// //DI: Dependency Injection
-// private UserService userService;
-
-// public UserController(UserService userService) {
-// this.userService = userService;
-// }
-
-// @GetMapping("")
-// public String getHomePage() {
-// return this.userService.handleHello();
-// }
-// }

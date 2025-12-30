@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
+uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="form"
+uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,27 +23,37 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <div class="col-md-6 col-12 mx-auto">
           <h1>Create a User</h1>
           <hr />
-          <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password:</label>
-            <input type="password" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number:</label>
-            <input type="text" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="fullName" class="form-label">Full Name:</label>
-            <input type="text" class="form-control" />
-          </div>
-          <div class="mb-3">
-            <label for="address" class="form-label">Address:</label>
-            <input type="text" class="form-control" />
-          </div>
-          <button type="submit" class="btn btn-primary">Create User</button>
+          <form:form
+            action="/admin/user/create"
+            method="post"
+            modelAttribute="newUser"
+          >
+            <div class="mb-3">
+              <label for="email" class="form-label">Email:</label>
+              <form:input type="email" class="form-control" path="email" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <form:input
+                type="password"
+                class="form-control"
+                path="password"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number:</label>
+              <form:input type="text" class="form-control" path="phone" />
+            </div>
+            <div class="mb-3">
+              <label for="fullName" class="form-label">Full Name:</label>
+              <form:input type="text" class="form-control" path="fullName" />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address:</label>
+              <form:input type="text" class="form-control" path="address" />
+            </div>
+            <button type="submit" class="btn btn-primary">Create User</button>
+          </form:form>
         </div>
       </div>
     </div>
