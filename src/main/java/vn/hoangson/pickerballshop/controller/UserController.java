@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 import vn.hoangson.pickerballshop.service.UserService;
 
+
 @Controller
 public class UserController {
 
@@ -25,6 +26,12 @@ public class UserController {
         model.addAttribute("message", test);
         return "hello";
     }
+
+    @RequestMapping("/admin/user")
+    public String postUserPage(Model model) {
+        return "/admin/user/create";
+    }
+    
 }
 
 // @RestController
