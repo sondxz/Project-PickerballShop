@@ -1,6 +1,16 @@
 package vn.hoangson.pickerballshop.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String password;
@@ -8,7 +18,6 @@ public class User {
     private String address;
     private String phone;
 
-    
     // Getters and Setters
     public Long getId() {
         return id;
