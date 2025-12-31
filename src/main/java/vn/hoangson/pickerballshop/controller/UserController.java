@@ -1,6 +1,8 @@
 package vn.hoangson.pickerballshop.controller;
 
 import vn.hoangson.pickerballshop.domain.User;
+import vn.hoangson.pickerballshop.repository.UserRepository;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,7 @@ import vn.hoangson.pickerballshop.service.UserService;
 public class UserController {
 
     // //DI: Dependency Injection
-    private UserService userService;
+    private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -22,8 +24,7 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
-        String test = this.userService.handleHello();
-        model.addAttribute("message", test);
+        model.addAttribute("message", "test");
         return "hello";
     }
 
@@ -36,6 +37,7 @@ public class UserController {
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
     public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
         System.out.println("Creating user..." + user);
+        this.userService.handleSaveUser(user);
         return "hello";
     }
 }
