@@ -22,7 +22,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         <div class="col-12 mx-auto">
           <div class="d-flex justify-content-between">
             <h3>Table users</h3>
-            <a href="/admin/user/create" class="btn btn-primary">Create New User</a>
+            <a href="/admin/user/create" class="btn btn-primary"
+              >Create New User</a
+            >
           </div>
           <hr />
           <table class="table table-bordered table-hover">
@@ -35,26 +37,18 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>seomonx7@gmail.com</td>
-                <td>Hoang Son</td>
-                <td>
-                  <button class="btn btn-success">View</button>
-                  <button class="btn btn-warning">Update</button>
-                  <button class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>hoangsonnguyen204@gmail.com</td>
-                <td>Hoang Son</td>
-                <td>
-                  <button class="btn btn-success">View</button>
-                  <button class="btn btn-warning">Update</button>
-                  <button class="btn btn-danger">Delete</button>
-                </td>
-              </tr>
+              <c:forEach var="user" items="${users1}">
+                <tr>
+                  <td>${user.id}</td>
+                  <td>${user.email}</td>
+                  <td>${user.fullName}</td>
+                  <td class="d-flex justify-content-between">
+                    <button class="btn btn-success">View</button>
+                    <button class="btn btn-warning">Update</button>
+                    <button class="btn btn-danger">Delete</button>
+                  </td>
+                </tr>
+              </c:forEach>
             </tbody>
           </table>
         </div>
