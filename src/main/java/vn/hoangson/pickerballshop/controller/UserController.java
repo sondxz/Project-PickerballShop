@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.Model;
 import vn.hoangson.pickerballshop.service.UserService;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 public class UserController {
@@ -43,19 +46,12 @@ public class UserController {
     }
     
     @RequestMapping("/admin/user/{id}")
-    public String getDetailUserPage(Model model, @PathVariable Long id) {
+    public String getDetailUserPage(Model model, @PathVariable long id) {
         User userById = this.userService.handleGetUsersById(id);
         model.addAttribute("user", userById);
         model.addAttribute("id", id);
         return "admin/user/user-detail";
-    }
-
-    @RequestMapping("/admin/user/update/{id}")
-    public String getUpdateUserPage(Model model) {
-        model.addAttribute("newUser", new User());
-        return "admin/user/update";
-    }
-    
+    }    
 
     @RequestMapping("/admin/user/create")
     public String getCreateUserPage(Model model) {
@@ -69,4 +65,25 @@ public class UserController {
         this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }
+
+    @RequestMapping("/admin/user/update/{id}")
+    public String getUpdateUserPage(Model model, @PathVariable long id) {
+        User currentUser = this.userService.handleGetUsersById(id);
+        model.addAttribute("newUser", currentUser);
+        return "admin/user/update";
+    }
+
+    @PostMapping("/admin/user/update")
+    public String postUpdateUser(Model model, @ModelAttribute("newUser") User user) {
+        User currentUser = this.userService.handleGetUsersById(user.getId());
+        if (currentUser != null) {
+            currentUser.setFullName(user.getFullName());
+            currentUser.setPhone(user.getPhone());
+            currentUser.setAddress(user.getAddress());
+
+            this.userService.handleSaveUser(currentUser);
+        }
+        return "redirect:/admin/user";
+    }
+    
 }

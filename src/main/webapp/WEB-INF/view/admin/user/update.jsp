@@ -21,16 +21,16 @@ uri="http://www.springframework.org/tags/form" %>
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-6 col-12 mx-auto">
-          <h1>Update a User id = </h1>
+          <h1>Update a User</h1>
           <hr />
-          <form:form action="/admin/user/update/" method="post" modelAttribute="newUser">
-            <div class="mb-3">
+          <form:form action="/admin/user/update" method="post" modelAttribute="newUser">
+            <div class="mb-3" style="display: none;">
               <label for="password" class="form-label">Id:</label>
               <form:input type="text" class="form-control" path="id" />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
-              <form:input type="email" class="form-control" path="email" />
+              <form:input type="email" class="form-control" path="email"  />
             </div>
 
             <div class="mb-3">
