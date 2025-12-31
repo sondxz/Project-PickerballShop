@@ -5,8 +5,10 @@ import vn.hoangson.pickerballshop.repository.UserRepository;
 
 import java.util.List;
 
+import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,6 +39,12 @@ public class UserController {
         List<User> users = this.userService.handleGetAllUsers();
         model.addAttribute("users1", users);
         return "admin/user/table-user";
+    }
+    
+    @RequestMapping("/admin/user/{id}")
+    public String getDetailUserPage(Model model, @PathVariable Long id) {
+        model.addAttribute("id", id);
+        return "admin/user/user-detail";
     }
 
     @RequestMapping("/admin/user/create")
