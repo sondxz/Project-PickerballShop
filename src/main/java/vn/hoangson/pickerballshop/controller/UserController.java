@@ -3,6 +3,8 @@ package vn.hoangson.pickerballshop.controller;
 import vn.hoangson.pickerballshop.domain.User;
 import vn.hoangson.pickerballshop.repository.UserRepository;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.ui.Model;
 import vn.hoangson.pickerballshop.service.UserService;
-
 
 @Controller
 public class UserController {
@@ -24,6 +25,8 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
+        List<User> arrUser = this.userService.handleGetAllUsersByEmail("seomonx7@gmail.com");
+        System.out.println("arrUser: " + arrUser);
         model.addAttribute("message", "test");
         return "hello";
     }
