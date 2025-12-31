@@ -18,6 +18,8 @@ import vn.hoangson.pickerballshop.service.UserService;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 
 @Controller
@@ -86,4 +88,19 @@ public class UserController {
         return "redirect:/admin/user";
     }
     
+    @GetMapping("/admin/user/delete/{id}")
+    public String getDeleteUserPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        // Cách 1:
+        // User user = new User();
+        // user.setId(id);
+        model.addAttribute("newUser", new User());
+        return "admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String getDeleteUserPage(Model model, @ModelAttribute("newUser") User user) {
+       this.userService.handleDeleteUserById(user.getId());
+        return "redirect:/admin/user";
+    }
 }

@@ -25,12 +25,12 @@ uri="http://www.springframework.org/tags/form" %>
           <hr />
           <form:form action="/admin/user/update" method="post" modelAttribute="newUser">
             <div class="mb-3" style="display: none;">
-              <label for="password" class="form-label">Id:</label>
+              <label for="id" class="form-label">Id:</label>
               <form:input type="text" class="form-control" path="id" />
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email:</label>
-              <form:input type="email" class="form-control" path="email"  />
+              <form:input type="email" class="form-control" path="email" disabled="true" />
             </div>
 
             <div class="mb-3">

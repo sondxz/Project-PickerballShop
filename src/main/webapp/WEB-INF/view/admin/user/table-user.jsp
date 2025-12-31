@@ -45,7 +45,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <td class="d-flex justify-content-between">
                     <a href="/admin/user/${user.id}" class="btn btn-success">View</a>
                     <a href="/admin/user/update/${user.id}" class="btn btn-warning">Update</a>
-                    <button class="btn btn-danger">Delete</button>
+                    <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
                   </td>
                 </tr>
               </c:forEach>
