@@ -4,6 +4,7 @@ import vn.hoangson.pickerballshop.domain.User;
 import vn.hoangson.pickerballshop.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.springframework.stereotype.Controller;
@@ -43,6 +44,8 @@ public class UserController {
     
     @RequestMapping("/admin/user/{id}")
     public String getDetailUserPage(Model model, @PathVariable Long id) {
+        User userById = this.userService.handleGetUsersById(id);
+        model.addAttribute("user", userById);
         model.addAttribute("id", id);
         return "admin/user/user-detail";
     }

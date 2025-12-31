@@ -1,6 +1,7 @@
 package vn.hoangson.pickerballshop.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,10 @@ public class UserService {
 
     public List<User> handleGetAllUsersByEmail(String email) {
         return this.userRepository.findByEmail(email);
+    }
+
+    public User handleGetUsersById(long id) {
+        return this.userRepository.findById(id);
     }
 
     public User handleSaveUser(User user) {
