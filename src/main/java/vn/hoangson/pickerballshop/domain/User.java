@@ -18,6 +18,8 @@ public class User {
     private String address;
     private String phone;
 
+    private String avatar;
+
     // Getters and Setters
     public Long getId() {
         return id;
@@ -67,6 +69,8 @@ public class User {
         this.phone = phone;
     }
 
+    
+
     // toString method
     @Override
     public String toString() {
@@ -76,6 +80,15 @@ public class User {
                 ", fullName='" + fullName + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", avatar='" + avatar + '\'' +
                 '}';
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
