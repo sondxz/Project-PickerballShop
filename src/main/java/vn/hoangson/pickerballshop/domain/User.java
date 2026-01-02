@@ -1,9 +1,16 @@
 package vn.hoangson.pickerballshop.domain;
 
+import java.util.List;
+
+import org.aspectj.weaver.ast.Or;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity(name = "users")
@@ -19,6 +26,13 @@ public class User {
     private String phone;
 
     private String avatar;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
     // Getters and Setters
     public Long getId() {
