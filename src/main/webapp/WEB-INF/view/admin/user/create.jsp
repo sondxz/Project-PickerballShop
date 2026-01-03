@@ -18,6 +18,17 @@ uri="http://www.springframework.org/tags/form" %>
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        const avatarFile = $("#avatarFile");
+        avatarFile.change(function (e) {
+          const imgURL = URL.createObjectURL(e.target.files[0]);
+          $("#avatarPreview").attr("src", imgURL);
+          $("#avatarPreview").css({ display: "block" });
+        });
+      });
+    </script>
   </head>
   <body class="sb-nav-fixed">
     <jsp:include page="../layout/header.jsp" />
@@ -42,6 +53,7 @@ uri="http://www.springframework.org/tags/form" %>
                   method="post"
                   modelAttribute="newUser"
                   class="row"
+                  enctype="multipart/form-data"
                 >
                   <div class="mb-3 col-12 col-md-6">
                     <label for="email" class="form-label">Email:</label>
@@ -81,11 +93,11 @@ uri="http://www.springframework.org/tags/form" %>
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="role" class="form-label">Role:</label>
-                    <select name="role" id="role" class="form-select">
-                      <option value="USER">USER</option>
-                      <option value="ADMIN">ADMIN</option>
-                      <option value="STAFF">STAFF</option>
-                    </select>
+                    <form:select path="role.name" class="form-select">
+                      <form:option value="USER">USER</form:option>
+                      <form:option value="ADMIN">ADMIN</form:option>
+                      <form:option value="STAFF">STAFF</form:option>
+                    </form:select>
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="avatarFile" class="form-label">Avatar:</label>
@@ -94,6 +106,7 @@ uri="http://www.springframework.org/tags/form" %>
                       class="form-control"
                       id="avatarFile"
                       accept=".png, .jpg, .jpeg"
+                      name="avatarFile"
                     />
                   </div>
                   <div class="mb-3 col-12">
