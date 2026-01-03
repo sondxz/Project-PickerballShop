@@ -1,12 +1,9 @@
-package vn.hoangson.pickerballshop.controller;
+package vn.hoangson.pickerballshop.controller.admin;
 
 import vn.hoangson.pickerballshop.domain.User;
-import vn.hoangson.pickerballshop.repository.UserRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.ui.Model;
 import vn.hoangson.pickerballshop.service.UserService;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -44,7 +39,7 @@ public class UserController {
     public String getUserPage(Model model) {
         List<User> users = this.userService.handleGetAllUsers();
         model.addAttribute("users1", users);
-        return "admin/user/table-user";
+        return "admin/user/show";
     }
     
     @RequestMapping("/admin/user/{id}")

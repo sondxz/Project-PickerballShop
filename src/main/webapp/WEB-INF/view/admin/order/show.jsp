@@ -25,12 +25,36 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Order</h1>
+            <h1 class="mt-4">Manage Users</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Order</li>
+              <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="/admin/order">orders</a></li>
             </ol>
-            <div>Order</div>
-          </div>
+              <div class="row">
+                <div class="col-12 mx-auto">
+                  <div class="d-flex justify-content-between">
+                    <h3>Table orders</h3>
+                    <a href="/admin/order/create" class="btn btn-primary"
+                      >Create New Order</a
+                    >
+                  </div>
+                  <hr />
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Full Name</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
         </main>
         <jsp:include page="../layout/footer.jsp" />
       </div>

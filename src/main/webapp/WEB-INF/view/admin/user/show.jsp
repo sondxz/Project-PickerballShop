@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Product - PickerBallShop</title>
+    <title>Users - PickerBallShop</title>
     <link href="/css/style.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -25,17 +25,17 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Manage Products</h1>
+            <h1 class="mt-4">Manage Users</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
-              <li class="breadcrumb-item"><a href="/admin/product">products</a></li>
+              <li class="breadcrumb-item"><a href="/admin/user">users</a></li>
             </ol>
               <div class="row">
                 <div class="col-12 mx-auto">
                   <div class="d-flex justify-content-between">
-                    <h3>Table products</h3>
-                    <a href="/admin/product/create" class="btn btn-primary"
-                      >Create New Product</a
+                    <h3>Table users</h3>
+                    <a href="/admin/user/create" class="btn btn-primary"
+                      >Create New User</a
                     >
                   </div>
                   <hr />
@@ -49,7 +49,30 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       </tr>
                     </thead>
                     <tbody>
-              
+                      <c:forEach var="user" items="${users1}">
+                        <tr>
+                          <td>${user.id}</td>
+                          <td>${user.email}</td>
+                          <td>${user.fullName}</td>
+                          <td class="d-flex justify-content-between">
+                            <a
+                              href="/admin/user/${user.id}"
+                              class="btn btn-success"
+                              >View</a
+                            >
+                            <a
+                              href="/admin/user/update/${user.id}"
+                              class="btn btn-warning"
+                              >Update</a
+                            >
+                            <a
+                              href="/admin/user/delete/${user.id}"
+                              class="btn btn-danger"
+                              >Delete</a
+                            >
+                          </td>
+                        </tr>
+                      </c:forEach>
                     </tbody>
                   </table>
                 </div>
