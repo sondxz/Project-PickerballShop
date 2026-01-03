@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import jakarta.servlet.ServletContext;
 
 import org.springframework.ui.Model;
+
+import vn.hoangson.pickerballshop.service.UploadService;
 import vn.hoangson.pickerballshop.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +29,11 @@ public class UserController {
 
     // //DI: Dependency Injection
     private final UserService userService;
-    private final ServletContext servletContext;
+    private final UploadService uploadService;
 
-    public UserController(UserService userService, ServletContext servletContext) {
+    public UserController(UserService userService, UploadService uploadService) {
         this.userService = userService;
-        this.servletContext = servletContext;
+        this.uploadService = uploadService;
     }
 
     @RequestMapping("/")
@@ -66,24 +68,9 @@ public class UserController {
     @PostMapping(value = "/admin/user/create")
     public String createUserPage(Model model, @ModelAttribute("newUser") User user,
             @RequestParam("avatarFile") MultipartFile file) {
-        try {
-            byte[] bytes;
-            bytes = file.getBytes();
+        // Handle upload file
+        String avatar = this.uploadService.handleUploadFile(file, "avatar");
 
-            String rootPath = this.servletContext.getRealPath("/resources/images");
-            File dir = new File(rootPath + File.separator + "avatar");
-            if (!dir.exists())
-                dir.mkdirs();
-            // Create the file on server
-            File serverFile = new File(dir.getAbsolutePath() + File.separator +
-                    +System.currentTimeMillis() + "-" + file.getOriginalFilename());
-            BufferedOutputStream stream = new BufferedOutputStream(
-                    new FileOutputStream(serverFile));
-            stream.write(bytes);
-            stream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         System.out.println("Creating user..." + user);
         // this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
