@@ -92,13 +92,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <jsp:include page="../layout/feature.jsp" />
 
-    <!-- Fruits Shop Start-->
+    <!-- Vợt Shop Start-->
     <div class="container-fluid fruite py-5">
       <div class="container py-5">
         <div class="tab-class text-center">
           <div class="row g-4">
             <div class="col-lg-4 text-start">
-              <h1>Our Organic Products</h1>
+              <h1>Sản phẩm nổi bật</h1>
             </div>
             <div class="col-lg-8 text-end">
               <ul class="nav nav-pills d-inline-flex text-center mb-5">
@@ -109,46 +109,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     href="#tab-1"
                   >
                     <span class="text-dark" style="width: 130px"
-                      >All Products</span
+                      >Tất cả sản phẩm</span
                     >
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="d-flex py-2 m-2 bg-light rounded-pill"
-                    data-bs-toggle="pill"
-                    href="#tab-2"
-                  >
-                    <span class="text-dark" style="width: 130px"
-                      >Vegetables</span
-                    >
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="d-flex m-2 py-2 bg-light rounded-pill"
-                    data-bs-toggle="pill"
-                    href="#tab-3"
-                  >
-                    <span class="text-dark" style="width: 130px">Fruits</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="d-flex m-2 py-2 bg-light rounded-pill"
-                    data-bs-toggle="pill"
-                    href="#tab-4"
-                  >
-                    <span class="text-dark" style="width: 130px">Bread</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="d-flex m-2 py-2 bg-light rounded-pill"
-                    data-bs-toggle="pill"
-                    href="#tab-5"
-                  >
-                    <span class="text-dark" style="width: 130px">Meat</span>
                   </a>
                 </li>
               </ul>
@@ -163,7 +125,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-5.jpg"
+                            src="/client/img/fruite-item-5.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -172,16 +134,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Grapes</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Genesis</h4>
+                          <p>KAMITO GENESIS - KHỞI NGUYÊN SỨC MẠNH</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -194,7 +153,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -204,7 +163,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-5.jpg"
+                            src="/client/img/fruite-item-5.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -213,16 +172,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Grapes</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Genesis</h4>
+                          <p>KAMITO GENESIS - KHỞI NGUYÊN SỨC MẠNH</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -235,7 +191,45 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                      <div class="rounded position-relative fruite-item">
+                        <div class="fruite-img">
+                          <img
+                            src="/client/img/fruite-item-2.png"
+                            class="img-fluid w-100 rounded-top"
+                            alt=""
+                          />
+                        </div>
+                        <div
+                          class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                          style="top: 10px; left: 10px"
+                        >
+                          Vợt
+                        </div>
+                        <div
+                          class="p-4 border border-secondary border-top-0 rounded-bottom"
+                        >
+                          <h4>Vợt Pickleball Facolos Elite X</h4>
+                          <p>Thay đổi toàn diện hướng ra quốc tế</p>
+                          <div
+                            class="d-flex justify-content-between flex-lg-wrap"
+                          >
+                            <p class="text-dark fs-5 fw-bold mb-0">
+                              $4.99 / kg
+                            </p>
+                            <a
+                              href="#"
+                              class="btn border border-secondary rounded-pill px-3 text-primary"
+                              ><i
+                                class="fa fa-shopping-bag me-2 text-primary"
+                              ></i>
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -245,7 +239,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-2.jpg"
+                            src="/client/img/fruite-item-4.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -254,16 +248,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Raspberries</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Genesis Wide Body</h4>
+                          <p>KAMITO GENESIS - KHỞI NGUYÊN SỨC MẠNH</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -276,7 +267,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -286,7 +277,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-4.jpg"
+                            src="/client/img/fruite-item-3.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -295,16 +286,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Apricots</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Gamma</h4>
+                          <p>KAMITO GAMMA - SỨC MẠNH VƯỢT TRỘI</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -317,7 +305,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -327,7 +315,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-3.jpg"
+                            src="/client/img/fruite-item-1.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -336,16 +324,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Banana</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Alpha 2</h4>
+                          <p>Kamito Alpha 2 - SỨC MẠNH VƯỢT TRỘI</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -358,7 +343,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -368,7 +353,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-1.jpg"
+                            src="/client/img/fruite-item-2.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -377,16 +362,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Oranges</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Facolos Elite X</h4>
+                          <p>Thay đổi toàn diện hướng ra quốc tế</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -399,7 +381,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -409,7 +391,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-2.jpg"
+                            src="/client/img/fruite-item-5.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -418,16 +400,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Raspberries</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Genesis</h4>
+                          <p>KAMITO GENESIS - KHỞI NGUYÊN SỨC MẠNH</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -440,48 +419,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                      <div class="rounded position-relative fruite-item">
-                        <div class="fruite-img">
-                          <img
-                            src="/client/img/fruite-item-5.jpg"
-                            class="img-fluid w-100 rounded-top"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                          style="top: 10px; left: 10px"
-                        >
-                          Fruits
-                        </div>
-                        <div
-                          class="p-4 border border-secondary border-top-0 rounded-bottom"
-                        >
-                          <h4>Grapes</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
-                          <div
-                            class="d-flex justify-content-between flex-lg-wrap"
-                          >
-                            <p class="text-dark fs-5 fw-bold mb-0">
-                              $4.99 / kg
-                            </p>
-                            <a
-                              href="#"
-                              class="btn border border-secondary rounded-pill px-3 text-primary"
-                              ><i
-                                class="fa fa-shopping-bag me-2 text-primary"
-                              ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -499,7 +437,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-5.jpg"
+                            src="/client/img/fruite-item-5.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -508,16 +446,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Grapes</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Kamito Genesis</h4>
+                          <p>KAMITO GENESIS - KHỞI NGUYÊN SỨC MẠNH</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -530,7 +465,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -540,7 +475,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-2.jpg"
+                            src="/client/img/fruite-item-2.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -549,16 +484,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Raspberries</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Facolos Elite X</h4>
+                          <p>Thay đổi toàn diện hướng ra quốc tế</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -571,7 +503,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -589,7 +521,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-1.jpg"
+                            src="/client/img/fruite-item-1.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -598,16 +530,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Oranges</h4>
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit sed do eiusmod te incididunt
-                          </p>
+                          <h4>Vợt Pickleball Facolos Elite X</h4>
+                          <p>Thay đổi toàn diện hướng ra quốc tế</p>
                           <div
                             class="d-flex justify-content-between flex-lg-wrap"
                           >
@@ -620,7 +549,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
+                              Add giỏ hàng</a
                             >
                           </div>
                         </div>
@@ -630,7 +559,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-6.jpg"
+                            src="/client/img/fruite-item-6.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -639,7 +568,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
@@ -661,8 +590,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -679,7 +608,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-5.jpg"
+                            src="/client/img/fruite-item-5.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -688,12 +617,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
                         >
-                          <h4>Grapes</h4>
+                          <h4>Vợt Pickleball Kamito Genesis</h4>
                           <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit sed do eiusmod te incididunt
@@ -710,8 +639,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -720,7 +649,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-4.jpg"
+                            src="/client/img/fruite-item-4.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -729,7 +658,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
@@ -751,8 +680,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -769,7 +698,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-3.jpg"
+                            src="/client/img/fruite-item-3.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -778,7 +707,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
@@ -800,8 +729,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -810,7 +739,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-2.jpg"
+                            src="/client/img/fruite-item-2.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -819,7 +748,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
@@ -841,8 +770,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -851,7 +780,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       <div class="rounded position-relative fruite-item">
                         <div class="fruite-img">
                           <img
-                            src="/client/img/fruite-item-1.jpg"
+                            src="/client/img/fruite-item-1.png"
                             class="img-fluid w-100 rounded-top"
                             alt=""
                           />
@@ -860,7 +789,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                           class="text-white bg-secondary px-3 py-1 rounded position-absolute"
                           style="top: 10px; left: 10px"
                         >
-                          Fruits
+                          Vợt
                         </div>
                         <div
                           class="p-4 border border-secondary border-top-0 rounded-bottom"
@@ -882,8 +811,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                               ><i
                                 class="fa fa-shopping-bag me-2 text-primary"
                               ></i>
-                              Add to cart</a
-                            >
+                              Add giỏ hàng
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -896,16 +825,16 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         </div>
       </div>
     </div>
-    <!-- Fruits Shop End-->
+    <!-- Vợt Shop End-->
 
     <!-- Bestsaler Product Start -->
     <div class="container-fluid py-5">
       <div class="container py-5">
         <div class="text-center mx-auto mb-5" style="max-width: 700px">
-          <h1 class="display-4">Bestseller Products</h1>
+          <h1 class="display-4">Sản phẩm bán chạy</h1>
           <p>
-            Latin words, combined with a handful of model sentence structures,
-            to generate Lorem Ipsum which looks reasonable.
+            Những sản phẩm bán chạy nhất trong tuần qua, được nhiều khách hàng
+            tin dùng
           </p>
         </div>
         <div class="row g-4">
@@ -914,13 +843,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-1.jpg"
+                    src="/client/img/best-product-1.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -932,9 +861,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -944,13 +873,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-2.jpg"
+                    src="/client/img/best-product-2.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -962,9 +891,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -974,13 +903,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-3.jpg"
+                    src="/client/img/best-product-3.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -992,9 +921,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -1004,13 +933,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-4.jpg"
+                    src="/client/img/best-product-4.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1022,9 +951,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -1034,13 +963,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-5.jpg"
+                    src="/client/img/best-product-5.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1052,9 +981,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -1064,13 +993,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="row align-items-center">
                 <div class="col-6">
                   <img
-                    src="/client/img/best-product-6.jpg"
+                    src="/client/img/best-product-6.png"
                     class="img-fluid rounded-circle w-100"
                     alt=""
                   />
                 </div>
                 <div class="col-6">
-                  <a href="#" class="h5">Organic Tomato</a>
+                  <a href="#" class="h5">Kamito Alpha 2 </a>
                   <div class="d-flex my-3">
                     <i class="fas fa-star text-primary"></i>
                     <i class="fas fa-star text-primary"></i>
@@ -1082,9 +1011,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   <a
                     href="#"
                     class="btn border border-secondary rounded-pill px-3 text-primary"
-                    ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                    cart</a
-                  >
+                    ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ
+                    hàng
+                  </a>
                 </div>
               </div>
             </div>
@@ -1092,12 +1021,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="text-center">
               <img
-                src="/client/img/fruite-item-1.jpg"
+                src="/client/img/fruite-item-1.png"
                 class="img-fluid rounded"
                 alt=""
               />
               <div class="py-4">
-                <a href="#" class="h5">Organic Tomato</a>
+                <a href="#" class="h5">Kamito Alpha 2 </a>
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
                   <i class="fas fa-star text-primary"></i>
@@ -1109,8 +1038,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <a
                   href="#"
                   class="btn border border-secondary rounded-pill px-3 text-primary"
-                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                  cart</a
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ hàng
+</a
                 >
               </div>
             </div>
@@ -1118,12 +1047,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="text-center">
               <img
-                src="/client/img/fruite-item-2.jpg"
+                src="/client/img/fruite-item-2.png"
                 class="img-fluid rounded"
                 alt=""
               />
               <div class="py-4">
-                <a href="#" class="h5">Organic Tomato</a>
+                <a href="#" class="h5">Kamito Alpha 2 </a>
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
                   <i class="fas fa-star text-primary"></i>
@@ -1135,8 +1064,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <a
                   href="#"
                   class="btn border border-secondary rounded-pill px-3 text-primary"
-                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                  cart</a
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ hàng
+</a
                 >
               </div>
             </div>
@@ -1144,12 +1073,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="text-center">
               <img
-                src="/client/img/fruite-item-3.jpg"
+                src="/client/img/fruite-item-3.png"
                 class="img-fluid rounded"
                 alt=""
               />
               <div class="py-4">
-                <a href="#" class="h5">Organic Tomato</a>
+                <a href="#" class="h5">Kamito Alpha 2 </a>
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
                   <i class="fas fa-star text-primary"></i>
@@ -1161,8 +1090,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <a
                   href="#"
                   class="btn border border-secondary rounded-pill px-3 text-primary"
-                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                  cart</a
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ hàng
+</a
                 >
               </div>
             </div>
@@ -1170,12 +1099,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="text-center">
               <img
-                src="/client/img/fruite-item-4.jpg"
+                src="/client/img/fruite-item-4.png"
                 class="img-fluid rounded"
                 alt=""
               />
               <div class="py-2">
-                <a href="#" class="h5">Organic Tomato</a>
+                <a href="#" class="h5">Kamito Alpha 2 </a>
                 <div class="d-flex my-3 justify-content-center">
                   <i class="fas fa-star text-primary"></i>
                   <i class="fas fa-star text-primary"></i>
@@ -1187,8 +1116,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <a
                   href="#"
                   class="btn border border-secondary rounded-pill px-3 text-primary"
-                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                  cart</a
+                  ><i class="fa fa-shopping-bag me-2 text-primary"></i>Add giỏ hàng
+</a
                 >
               </div>
             </div>

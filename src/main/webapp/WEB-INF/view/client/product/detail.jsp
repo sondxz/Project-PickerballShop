@@ -90,11 +90,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-      <h1 class="text-center text-white display-6">Shop Detail</h1>
+      <h1 class="text-center text-white display-6">Chi tiết sản phẩm</h1>
       <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active text-white">Shop Detail</li>
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Trang</a></li>
+        <li class="breadcrumb-item active text-white">Chi tiết sản phẩm</li>
       </ol>
     </div>
     <!-- Single Page Header End -->
@@ -109,7 +109,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="border rounded">
                   <a href="#">
                     <img
-                      src="/client/img/single-item.jpg"
+                      src="/client/img/single-item.png"
                       class="img-fluid rounded"
                       alt="Image"
                     />
@@ -276,7 +276,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   >
                     <div class="d-flex">
                       <img
-                        src="/client/img/avatar.jpg"
+                        src="/client/img/avatar.png"
                         class="img-fluid rounded-circle p-3"
                         style="width: 100px; height: 100px"
                         alt=""
@@ -305,7 +305,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     </div>
                     <div class="d-flex">
                       <img
-                        src="/client/img/avatar.jpg"
+                        src="/client/img/avatar.png"
                         class="img-fluid rounded-circle p-3"
                         style="width: 100px; height: 100px"
                         alt=""
@@ -471,7 +471,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/featur-1.jpg"
+                      src="/client/img/featur-1.png"
                       class="img-fluid rounded"
                       alt="Image"
                     />
@@ -496,7 +496,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/featur-2.jpg"
+                      src="/client/img/featur-2.png"
                       class="img-fluid rounded"
                       alt=""
                     />
@@ -521,7 +521,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/featur-3.jpg"
+                      src="/client/img/featur-3.png"
                       class="img-fluid rounded"
                       alt=""
                     />
@@ -546,7 +546,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded me-4" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/vegetable-item-4.jpg"
+                      src="/client/img/vegetable-item-4.png"
                       class="img-fluid rounded"
                       alt=""
                     />
@@ -571,7 +571,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded me-4" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/vegetable-item-5.jpg"
+                      src="/client/img/vegetable-item-5.png"
                       class="img-fluid rounded"
                       alt=""
                     />
@@ -596,7 +596,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div class="d-flex align-items-center justify-content-start">
                   <div class="rounded me-4" style="width: 100px; height: 100px">
                     <img
-                      src="/client/img/vegetable-item-6.jpg"
+                      src="/client/img/vegetable-item-6.png"
                       class="img-fluid rounded"
                       alt=""
                     />
@@ -629,7 +629,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="col-lg-12">
                 <div class="position-relative">
                   <img
-                    src="/client/img/banner-fruits.jpg"
+                    src="/client/img/banner-fruits.png"
                     class="img-fluid w-100 rounded"
                     alt=""
                   />
@@ -656,7 +656,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-6.jpg"
+                  src="/client/img/vegetable-item-6.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -689,7 +689,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-1.jpg"
+                  src="/client/img/vegetable-item-1.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -755,7 +755,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-4.jpg"
+                  src="/client/img/vegetable-item-4.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -788,7 +788,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-5.jpg"
+                  src="/client/img/vegetable-item-5.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -821,7 +821,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-6.jpg"
+                  src="/client/img/vegetable-item-6.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -854,7 +854,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-5.jpg"
+                  src="/client/img/vegetable-item-5.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
@@ -887,7 +887,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             >
               <div class="vesitable-img">
                 <img
-                  src="/client/img/vegetable-item-6.jpg"
+                  src="/client/img/vegetable-item-6.png"
                   class="img-fluid w-100 rounded-top"
                   alt=""
                 />
