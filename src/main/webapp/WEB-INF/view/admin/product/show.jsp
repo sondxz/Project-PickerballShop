@@ -43,8 +43,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Email</th>
-                        <th>Full Name</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Factory</th>
                         <th>Action</th>
                       </tr>
                     </thead>
