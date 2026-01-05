@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -21,16 +22,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
-    @Size(min = 5, max = 50, message = "Email must be between 5 and 50 characters")
+    @Email(message = "Email không đúng định dạng", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+    @NotEmpty(message = "Email không được để trống")
     private String email;
 
-    @NotNull
-    @Min(2)
+    @NotNull(message = "Password không được để trống")
+    @Size(min = 2, max = 100, message = "Password phải có tối thiểu 2 ký tự")
     private String password;
 
-    @NotNull
-    @Min(2)
+    @NotNull(message = "Full name không được để trống")
+    @Size(min = 3,max = 50, message = "Full name phải có tối thiểu 3 ký tự")
     private String fullName;
 
     private String address;
