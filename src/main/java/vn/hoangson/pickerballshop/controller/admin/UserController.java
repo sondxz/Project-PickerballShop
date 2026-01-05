@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.validation.Valid;
+
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 
 import vn.hoangson.pickerballshop.service.UploadService;
 import vn.hoangson.pickerballshop.service.UserService;
@@ -64,8 +68,19 @@ public class UserController {
     }
 
     @PostMapping(value = "/admin/user/create")
-    public String createUserPage(Model model, @ModelAttribute("newUser") User user,
+    public String createUserPage(Model model, @ModelAttribute("newUser") @Valid User user, BindingResult newUserBindingResult,
             @RequestParam("avatarFile") MultipartFile file) {
+        List<FieldError> errors = newUserBindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println("Field error in object '" + error.getObjectName() + "' on field '" + error.getField()
+                    + "': " + error.getDefaultMessage());
+        }
+
+        //validate
+        if (newUserBindingResult.hasErrors()) {
+            return "admin/user/create";
+        }
+        
         // Handle upload file
         String avatar = this.uploadService.handleUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(user.getPassword());
