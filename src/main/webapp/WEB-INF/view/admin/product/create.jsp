@@ -39,12 +39,13 @@ uri="http://www.springframework.org/tags/form" %>
           <div class="container-fluid px-4">
             <h1 class="mt-4">Products</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">
+              <li class="breadcrumb-item">
                 <a href="/admin">Dashboard</a>
               </li>
               <li class="breadcrumb-item">
                 <a href="/admin/product">Product</a>
               </li>
+              <li class="breadcrumb-item active">Create Product</li>
             </ol>
             <div class="row">
               <div class="col-md-6 col-12 mx-auto">
@@ -57,18 +58,41 @@ uri="http://www.springframework.org/tags/form" %>
                   modelAttribute="newProduct"
                   enctype="multipart/form-data"
                 >
+                  <c:set var="errorName">
+                    <form:errors path="name" cssClass="invalid-feedback" />
+                  </c:set>
+                  <c:set var="errorPrice">
+                    <form:errors path="price" cssClass="invalid-feedback" />
+                  </c:set>
+                  <c:set var="errorDetailDesc">
+                    <form:errors
+                      path="detailDesc"
+                      cssClass="invalid-feedback"
+                    />
+                  </c:set>
+                  <c:set var="errorShortDesc">
+                    <form:errors path="shortDesc" cssClass="invalid-feedback" />
+                  </c:set>
+                  <c:set var="errorQuantity">
+                    <form:errors path="quantity" cssClass="invalid-feedback" />
+                  </c:set>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="name" class="form-label">Name:</label>
-                    <form:input type="text" class="form-control" path="name" />
+                    <form:input
+                      type="text"
+                      class="form-control ${not empty errorName ? 'is-invalid' : ''}"
+                      path="name"
+                    />
+                    ${errorName}
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="price" class="form-label">Price:</label>
                     <form:input
-                      type="text"
-                      class="form-control"
+                      type="number"
+                      class="form-control ${not empty errorPrice ? 'is-invalid' : ''}"
                       path="price"
-                      value="0.0"
                     />
+                    ${errorPrice}
                   </div>
                   <div class="mb-3 col-12">
                     <label for="description" class="form-label"
@@ -76,9 +100,10 @@ uri="http://www.springframework.org/tags/form" %>
                     >
                     <form:textarea
                       type="text"
-                      class="form-control"
+                      class="form-control ${not empty errorDetailDesc ? 'is-invalid' : ''}"
                       path="detailDesc"
                     />
+                    ${errorDetailDesc}
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="shortDescription" class="form-label"
@@ -86,17 +111,19 @@ uri="http://www.springframework.org/tags/form" %>
                     >
                     <form:input
                       type="text"
-                      class="form-control"
+                      class="form-control ${not empty errorShortDesc ? 'is-invalid' : ''}"
                       path="shortDesc"
                     />
+                    ${errorShortDesc}
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="quantity" class="form-label">Quantity:</label>
                     <form:input
-                      type="text"
-                      class="form-control"
+                      type="number"
+                      class="form-control ${not empty errorQuantity ? 'is-invalid' : ''}"
                       path="quantity"
                     />
+                    ${errorQuantity}
                   </div>
                   <div class="mb-3 col-12 col-md-6">
                     <label for="factory" class="form-label">Factory:</label>
@@ -111,8 +138,8 @@ uri="http://www.springframework.org/tags/form" %>
                       <form:option value="Selkirk">Selkirk</form:option>
                     </form:select>
                   </div>
-                  <div class="mb-3col-12 col-md-6">
-                    <label for="factory" class="form-label">Target:</label>
+                  <div class="mb-3 col-12 col-md-6">
+                    <label for="target" class="form-label">Target:</label>
                     <form:select class="form-select" path="target">
                       <form:option value="ATTACK">ATTACK</form:option>
                       <form:option value="GUARD">GUARD</form:option>
@@ -121,13 +148,13 @@ uri="http://www.springframework.org/tags/form" %>
                     </form:select>
                   </div>
                   <div class="mb-3 col-12 col-md-6">
-                    <label for="avatarFile" class="form-label">Image:</label>
+                    <label for="productFile" class="form-label">Image:</label>
                     <input
                       type="file"
                       class="form-control"
                       id="avatarFile"
                       accept=".png, .jpg, .jpeg"
-                      name="avatarFile"
+                      name="productFile"
                     />
                   </div>
                   <div class="mb-3 col-12">

@@ -28,7 +28,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <h1 class="mt-4">Manage Users</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
-              <li class="breadcrumb-item"><a href="/admin/user">users</a></li>
+              <li class="breadcrumb-item active">
+                User
+              </li>
             </ol>
               <div class="row">
                 <div class="col-12 mx-auto">

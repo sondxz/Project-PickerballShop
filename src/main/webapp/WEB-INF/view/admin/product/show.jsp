@@ -28,7 +28,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             <h1 class="mt-4">Manage Products</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
-              <li class="breadcrumb-item"><a href="/admin/product">products</a></li>
+              <li class="breadcrumb-item active">
+                Product
+              </li>
             </ol>
               <div class="row">
                 <div class="col-12 mx-auto">
@@ -50,7 +52,31 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                       </tr>
                     </thead>
                     <tbody>
-              
+                      <c:forEach var="product" items="${products}">
+                        <tr>
+                          <td>${product.id}</td>
+                          <td>${product.name}</td>
+                          <td>${product.price}</td>
+                          <td>${product.factory}</td>
+                          <td class="d-flex justify-content-between">
+                            <a
+                              href="/admin/product/${product.id}"
+                              class="btn btn-success"
+                              >View</a
+                            >
+                            <a
+                              href="/admin/product/update/${product.id}"
+                              class="btn btn-warning"
+                              >Update</a
+                            >
+                            <a
+                              href="/admin/product/delete/${product.id}"
+                              class="btn btn-danger"
+                              >Delete</a
+                            >
+                          </td>
+                        </tr>
+                      </c:forEach>
                     </tbody>
                   </table>
                 </div>

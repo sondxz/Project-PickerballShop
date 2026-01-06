@@ -42,7 +42,10 @@ uri="http://www.springframework.org/tags/form" %>
               <li class="breadcrumb-item active">
                 <a href="/admin">Dashboard</a>
               </li>
-              <li class="breadcrumb-item"><a href="/admin/user">users</a></li>
+              <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
+              <li class="breadcrumb-item active">
+                Update User
+              </li>
             </ol>
             <div class="row">
               <div class="col-md-6 col-12 mx-auto">
