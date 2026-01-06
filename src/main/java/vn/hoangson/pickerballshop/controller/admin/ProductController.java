@@ -1,6 +1,7 @@
 package vn.hoangson.pickerballshop.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,7 @@ public class ProductController {
         this.uploadService = uploadService;
     }
 
+    //READ
     @GetMapping("/admin/product")
     public String getProduct(Model model) {
         List<Product> products = this.productService.fetchProduct();
@@ -38,6 +40,7 @@ public class ProductController {
         return "admin/product/show";
     }
     
+    //CREATE
     @GetMapping("/admin/product/create")
     public String getCreateProductPage(Model model) {
         model.addAttribute("newProduct", new Product());
@@ -61,5 +64,68 @@ public class ProductController {
         this.productService.createProduct(product);
         return "redirect:/admin/product";
     }
+
+    //DELETE
+    @GetMapping("/admin/product/delete/{id}")
+    public String getDeleteProduct(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("newProduct", new Product());
+        return "admin/product/delete";
+    }
+
+    @PostMapping("/admin/product/delete")
+    public String postDeleteProduct(Model model, @ModelAttribute("newProduct") Product product) {
+        this.productService.deleteProduct(product.getId());
+        return "redirect:/admin/product";
+    }
     
+    //DETAIL
+    @GetMapping("/admin/product/{id}")
+    public String getProductDetail(Model model, @PathVariable long id) {
+        Product product = this.productService.fetchProductById(id).get();
+        model.addAttribute("product", product);
+        model.addAttribute("id", id);
+        return "admin/product/detail";
+    }
+    
+    //UPDATE
+    @GetMapping("/admin/product/update/{id}")
+    public String getUpdateProductPage(@PathVariable long id, Model model) {
+        Optional<Product> optionalProduct = this.productService.fetchProductById(id);
+        model.addAttribute("newProduct", optionalProduct.get());
+        return "admin/product/update";
+    }
+
+    @PostMapping("/admin/product/update")
+    public String postUpdateProductPage(Model model,
+            @ModelAttribute("newProduct") @Valid Product product,
+            BindingResult newProductBindingResult,
+            @RequestParam("productFile") MultipartFile file) {
+
+        //validate
+        if (newProductBindingResult.hasErrors()) {
+            return "admin/product/update";
+        }
+
+        //upload file
+        Product currentProduct = this.productService.fetchProductById(product.getId()).get();
+        if(currentProduct != null) {
+            //upload new image
+            if (!file.isEmpty()) {
+                String images = this.uploadService.handleUploadFile(file, "products");
+                currentProduct.setImage(images);
+            }
+            
+            currentProduct.setName(product.getName());
+            currentProduct.setPrice(product.getPrice());
+            currentProduct.setDetailDesc(product.getDetailDesc());
+            currentProduct.setShortDesc(product.getShortDesc());
+            currentProduct.setQuantity(product.getQuantity());
+            currentProduct.setFactory(product.getFactory());
+            currentProduct.setTarget(product.getTarget());
+
+            this.productService.createProduct(currentProduct);
+        }
+        return "redirect:/admin/product";
+    }
 }

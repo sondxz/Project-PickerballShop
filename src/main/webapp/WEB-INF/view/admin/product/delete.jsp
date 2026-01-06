@@ -12,7 +12,7 @@ uri="http://www.springframework.org/tags/form" %>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Delete User - PickerBallShop</title>
+    <title>Delete Product - PickerBallShop</title>
     <link href="/css/style.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -31,22 +31,22 @@ uri="http://www.springframework.org/tags/form" %>
               <li class="breadcrumb-item active">
                 <a href="/admin">Dashboard</a>
               </li>
-              <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
+              <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
               <li class="breadcrumb-item active">
-                Delete User
+                Delete Product
               </li>
             </ol>
             <div class="row">
               <div class="col-12 mx-auto">
-                <h3>Delete a User id = ${id}</h3>
+                <h3>Delete a Product id = ${id}</h3>
                 <hr />
                 <div class="alert alert-danger">
-                  Are you sure you want to delete this user?
+                  Are you sure you want to delete this product?
                 </div>
                 <form:form
-                  action="/admin/user/delete"
+                  action="/admin/product/delete"
                   method="post"
-                  modelAttribute="newUser"
+                  modelAttribute="newProduct"
                 >
                   <div class="mb-3" style="display: none">
                     <label for="id" class="form-label">Id:</label>
@@ -58,9 +58,9 @@ uri="http://www.springframework.org/tags/form" %>
                     />
                   </div>
                   <button type="submit" class="btn btn-danger">
-                    Delete User
+                    Delete Product
                   </button>
-                  <a href="/admin/user" class="btn btn-secondary">Cancel</a>
+                  <a href="/admin/product" class="btn btn-secondary">Cancel</a>
                 </form:form>
               </div>
             </div>

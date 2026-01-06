@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="form"
-uri="http://www.springframework.org/tags/form" %>
+uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +11,7 @@ uri="http://www.springframework.org/tags/form" %>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Delete User - PickerBallShop</title>
+    <title>Users Detail - PickerBallShop</title>
     <link href="/css/style.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -31,37 +30,31 @@ uri="http://www.springframework.org/tags/form" %>
               <li class="breadcrumb-item active">
                 <a href="/admin">Dashboard</a>
               </li>
-              <li class="breadcrumb-item"><a href="/admin/user">User</a></li>
+              <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
               <li class="breadcrumb-item active">
-                Delete User
+                Product Detail
               </li>
             </ol>
             <div class="row">
               <div class="col-12 mx-auto">
-                <h3>Delete a User id = ${id}</h3>
-                <hr />
-                <div class="alert alert-danger">
-                  Are you sure you want to delete this user?
+                <div class="d-flex justify-content-between">
+                  <h3>Product Detail ${id}</h3>
                 </div>
-                <form:form
-                  action="/admin/user/delete"
-                  method="post"
-                  modelAttribute="newUser"
+                <hr />
+
+                <div class="card" style="width: 60%">
+                    <img src="/images/products/${product.image}" alt="Card image cap" class="card-img-top">
+                  <div class="card-header">Product Information</div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${product.id}</li>
+                    <li class="list-group-item">Name: ${product.name}</li>
+                    <li class="list-group-item">Description: ${product.detailDesc}</li>
+                    <li class="list-group-item">Price: ${product.price}</li>
+                  </ul>
+                </div>
+                <a href="/admin/product" class="btn btn-success mt-3"
+                  >Back to Products List</a
                 >
-                  <div class="mb-3" style="display: none">
-                    <label for="id" class="form-label">Id:</label>
-                    <form:input
-                      value="${id}"
-                      type="text"
-                      class="form-control"
-                      path="id"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-danger">
-                    Delete User
-                  </button>
-                  <a href="/admin/user" class="btn btn-secondary">Cancel</a>
-                </form:form>
               </div>
             </div>
           </div>
