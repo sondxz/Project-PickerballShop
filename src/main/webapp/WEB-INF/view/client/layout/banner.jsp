@@ -5,69 +5,41 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <div class="container py-5">
     <div class="row g-5 align-items-center">
       <div class="col-md-12 col-lg-7">
-        <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
-        <h1 class="mb-5 display-3 text-primary">
-          Organic Veggies & Fruits Foods
+        <h4 class="mb-3 text-secondary fw-bold">🏓 Professional Pickleball Gear</h4>
+        <h1 class="mb-4 display-3 text-primary fw-bold">
+          Bứt Phá Mọi Giới Hạn
         </h1>
+        <p class="mb-4 text-dark" style="font-size: 18px;">
+          Khám phá bộ sưu tập vợt Pickleball chính hãng từ các thương hiệu hàng đầu thế giới. 
+          Nâng tầm kỹ năng của bạn!
+        </p>
         <div class="position-relative mx-auto">
           <input
             class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill"
-            type="number"
-            placeholder="Search"
+            type="text"
+            placeholder="Tìm kiếm vợt, phụ kiện..."
           />
           <button
             type="submit"
             class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
             style="top: 0; right: 25%"
           >
-            Submit Now
+            Tìm kiếm
           </button>
         </div>
+        <div class="d-flex mt-4">
+          <a href="/product" class="btn btn-primary py-3 px-5 rounded-pill me-3">Xem sản phẩm</a>
+          <a href="#" class="btn btn-outline-primary py-3 px-5 rounded-pill">Liên hệ tư vấn</a>
+        </div>
       </div>
-      <div class="col-md-12 col-lg-5">
-        <div
-          id="carouselId"
-          class="carousel slide position-relative"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active rounded">
-              <img
-                src="/client/img/hero-img-1.png"
-                class="img-fluid w-100 h-100 bg-secondary rounded"
-                alt="First slide"
-              />
-              <a href="#" class="btn px-4 py-2 text-white rounded">Fruites</a>
-            </div>
-            <div class="carousel-item rounded">
-              <img
-                src="/client/img/hero-img-2.png"
-                class="img-fluid w-100 h-100 rounded"
-                alt="Second slide"
-              />
-              <a href="#" class="btn px-4 py-2 text-white rounded"
-                >Vesitables</a
-              >
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+      <div class="col-md-12 col-lg-5 text-center">
+        <div class="hero-img-wrapper p-4">
+          <img
+            src="/client/img/hero-img-1.png"
+            class="img-fluid rounded shadow"
+            alt="Pickleball Paddle"
+            style="max-height: 400px;"
+          />
         </div>
       </div>
     </div>

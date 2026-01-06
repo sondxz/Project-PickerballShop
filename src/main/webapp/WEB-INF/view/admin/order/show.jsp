@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Order - PickerBallShop</title>
+    <title>Order - PickleballShop</title>
     <link href="/css/style.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -66,3 +66,4 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="js/script.js"></script>
   </body>
 </html>
+

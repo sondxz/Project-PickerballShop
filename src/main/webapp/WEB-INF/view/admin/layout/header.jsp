@@ -2,7 +2,7 @@
 uri="http://java.sun.com/jsp/jstl/core"%>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
   <!-- Navbar Brand-->
-  <a class="navbar-brand ps-3" href="/admin">PickerBallShop</a>
+  <a class="navbar-brand ps-3" href="/admin">PickleballShop</a>
   <!-- Sidebar Toggle-->
   <button
     class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
@@ -50,3 +50,4 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     </li>
   </ul>
 </nav>
+

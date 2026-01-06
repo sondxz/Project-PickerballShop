@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <div class="container px-0">
     <nav class="navbar navbar-light bg-white navbar-expand-xl">
       <a href="/" class="navbar-brand"
-        ><h1 class="text-primary display-6">PickerballShop</h1></a
+        ><h1 class="display-6"><span class="text-primary">Pickleball</span><span class="text-secondary fw-bold">Shop</span></h1></a
       >
       <button
         class="navbar-toggler py-2 px-3"

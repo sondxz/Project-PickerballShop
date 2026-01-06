@@ -117,8 +117,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 </div>
               </div>
               <div class="col-lg-6">
-                <h4 class="fw-bold mb-3">Brocoli</h4>
-                <p class="mb-3">Category: Vegetables</p>
+                <h4 class="fw-bold mb-3">${product.name}</h4>
+                <p class="mb-3">Danh mục: Vợt Pickleball</p>
                 <h5 class="fw-bold mb-3">3,35 $</h5>
                 <div class="d-flex mb-4">
                   <i class="fa fa-star text-secondary"></i>
@@ -238,20 +238,20 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                             class="row bg-light text-center align-items-center justify-content-center py-2"
                           >
                             <div class="col-6">
-                              <p class="mb-0">Quality</p>
+                              <p class="mb-0">Chất lượng</p>
                             </div>
                             <div class="col-6">
-                              <p class="mb-0">Organic</p>
+                              <p class="mb-0">Chính hãng</p>
                             </div>
                           </div>
                           <div
                             class="row text-center align-items-center justify-content-center py-2"
                           >
                             <div class="col-6">
-                              <p class="mb-0">Сheck</p>
+                              <p class="mb-0">Kiểm định</p>
                             </div>
                             <div class="col-6">
-                              <p class="mb-0">Healthy</p>
+                              <p class="mb-0">Đạt chuẩn</p>
                             </div>
                           </div>
                           <div

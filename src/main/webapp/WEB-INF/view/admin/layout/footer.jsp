@@ -3,7 +3,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <footer class="py-4 bg-light mt-auto">
   <div class="container-fluid px-4">
     <div class="d-flex align-items-center justify-content-between small">
-      <div class="text-muted">Copyright &copy; PickerBallShop Website 2025</div>
+      <div class="text-muted">Copyright &copy; PickleballShop Website 2025</div>
       <div>
         <a href="#">Privacy Policy</a>
         &middot;
@@ -12,3 +12,4 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     </div>
   </div>
 </footer>
+

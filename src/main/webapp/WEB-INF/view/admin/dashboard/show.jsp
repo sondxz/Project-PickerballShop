@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - PickerBallShop</title>
+    <title>Dashboard - PickleballShop</title>
     <link
       href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
       rel="stylesheet"
@@ -630,3 +630,4 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="js/datatables-simple-demo.js"></script>
   </body>
 </html>
+

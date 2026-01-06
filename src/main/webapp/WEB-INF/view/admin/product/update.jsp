@@ -12,7 +12,7 @@ uri="http://www.springframework.org/tags/form" %>
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Update Product - PickerBallShop</title>
+    <title>Update Product - PickleballShop</title>
     <link href="/css/style.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
@@ -194,3 +194,4 @@ uri="http://www.springframework.org/tags/form" %>
     <script src="js/script.js"></script>
   </body>
 </html>
+

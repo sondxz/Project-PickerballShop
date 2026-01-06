@@ -10,8 +10,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="row g-4">
         <div class="col-lg-3">
           <a href="#">
-            <h1 class="text-primary mb-0">PickerballShop</h1>
-            <p class="text-secondary mb-0">@PickerballShop</p>
+            <h1 class="mb-0"><span class="text-primary">Pickleball</span><span class="text-secondary fw-bold">Shop</span></h1>
+            <p class="text-secondary mb-0">@PickleballShop</p>
           </a>
         </div>
         <div class="col-lg-6">
