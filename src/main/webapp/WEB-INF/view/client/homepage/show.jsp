@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -122,49 +123,59 @@ uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib uri="http://java.sun.com/js
                 <div class="col-lg-12">
                   <div class="row g-4">
                     <c:forEach var="product" items="${products}">
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                      <div class="rounded position-relative fruite-item">
-                        <div class="fruite-img">
-                          <img
-                            src="/images/products/${product.image}"
-                            class="img-fluid w-100 rounded-top"
-                            alt=""
-                          />
-                        </div>
-                        <div
-                          class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                          style="top: 10px; left: 10px"
-                        >
-                          Vợt
-                        </div>
-                        <div
-                          class="p-4 border border-secondary border-top-0 rounded-bottom"
-                        >
-                          <h4 style="font-size: 18px;">${product.name}</h4>
-                          <p style="font-size: 13px;">${product.shortDesc}</p>
+                      <div class="col-md-6 col-lg-4 col-xl-3">
+                        <div class="rounded position-relative fruite-item">
+                          <div class="fruite-img">
+                            <img
+                              src="/images/products/${product.image}"
+                              class="img-fluid w-100 rounded-top"
+                              alt=""
+                            />
+                          </div>
                           <div
-                            class="d-flex flex-lg-wrap"
+                            class="text-white bg-secondary px-3 py-1 rounded position-absolute"
+                            style="top: 10px; left: 10px"
                           >
-                            <p style="font-size: 15px; text-align: center; width: 100%;" class="text-dark fw-bold mb-3">
-                              <fmt:formatNumber
-                                value="${product.price}"
-                                type="currency"
-                                currencySymbol="₫"
-                                groupingUsed="true">
-                            </fmt:formatNumber>
-                            </p>
-                            <a
-                              href="#"
-                              class="btn border border-secondary rounded-pill px-3 text-primary"
-                              ><i
-                                class="fa fa-shopping-bag me-2 text-primary"
-                              ></i>
-                              Add giỏ hàng</a
-                            >
+                            Vợt
+                          </div>
+                          <div
+                            class="p-4 border border-secondary border-top-0 rounded-bottom"
+                          >
+                            <h4 style="font-size: 18px">
+                              <a href="/product/${product.id}"
+                                >${product.name}</a
+                              >
+                            </h4>
+                            <p style="font-size: 13px">${product.shortDesc}</p>
+                            <div class="d-flex flex-lg-wrap">
+                              <p
+                                style="
+                                  font-size: 15px;
+                                  text-align: center;
+                                  width: 100%;
+                                "
+                                class="text-dark fw-bold mb-3"
+                              >
+                                <fmt:formatNumber
+                                  value="${product.price}"
+                                  type="currency"
+                                  currencySymbol="₫"
+                                  groupingUsed="true"
+                                >
+                                </fmt:formatNumber>
+                              </p>
+                              <a
+                                href="#"
+                                class="btn border border-secondary rounded-pill px-3 text-primary"
+                                ><i
+                                  class="fa fa-shopping-bag me-2 text-primary"
+                                ></i>
+                                Add giỏ hàng</a
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
                     </c:forEach>
                   </div>
                 </div>
@@ -173,8 +184,6 @@ uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib uri="http://java.sun.com/js
           </div>
         </div>
       </div>
-    </div>
-    <!-- Vợt Shop End-->
     </div>
     <!-- Bestsaler Product End -->
 

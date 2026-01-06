@@ -10,7 +10,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       <div class="row g-4">
         <div class="col-lg-3">
           <a href="#">
-            <h1 class="mb-0"><span class="text-primary">Pickleball</span><span class="text-secondary fw-bold">Shop</span></h1>
+            <h1 class="mb-0">
+              <span class="text-primary">Pickleball</span
+              ><span class="text-secondary fw-bold">Shop</span>
+            </h1>
             <p class="text-secondary mb-0">@PickleballShop</p>
           </a>
         </div>
@@ -112,8 +115,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <div class="row">
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
         <span class="text-light"
-          ><a href="#"
-            ><i class="fas fa-copyright text-light me-2"></i>Sondxz</a
+          ><a href="#"><i class="fas fa-copyright text-light me-2"></i>Sondxz</a
           >, All right reserved.</span
         >
       </div>
