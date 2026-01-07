@@ -29,6 +29,15 @@ public class RegisterValidator implements ConstraintValidator<RegisterChecked, R
             valid = false;
         }
 
+        //check email
+        if(this.userService.checkEmailExist(user.getEmail())) {
+            context.buildConstraintViolationWithTemplate("Email đã tồn tại")
+                    .addPropertyNode("email")
+                    .addConstraintViolation()
+                    .disableDefaultConstraintViolation();
+            valid = false;
+        }
+
         return valid;
     }
 }
