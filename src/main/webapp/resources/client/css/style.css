@@ -594,3 +594,24 @@
   line-height: 35px;
 }
 /*** Footer End ***/
+
+/* Tùy chỉnh nút bấm chính */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a4b7c; /* Màu xanh sáng hơn chút khi di chuột */
+    border-color: #1a4b7c;
+    transform: translateY(-1px); /* Hiệu ứng nổi lên nhẹ */
+}
+
+/* Card đăng ký */
+.card {
+    border: none; /* Bỏ viền đen mặc định */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; /* Đổ bóng mềm mại hơn */
+}
