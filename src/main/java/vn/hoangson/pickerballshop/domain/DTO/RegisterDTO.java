@@ -1,5 +1,8 @@
 package vn.hoangson.pickerballshop.domain.DTO;
 
+import vn.hoangson.pickerballshop.service.validator.RegisterChecked;
+
+@RegisterChecked
 public class RegisterDTO {
     private String firstName;
     private String lastName;
