@@ -34,6 +34,11 @@ uri="http://www.springframework.org/tags/form" %>
                   </div>
                   <div class="card-body">
                     <form method="post" action="/login">
+                      <c:if test="${param.error != null}">
+                        <div class="my-2" style="color: red">
+                          Invalid email or password.
+                        </div>
+                      </c:if>
                       <div class="form-floating mb-3">
                         <input
                           class="form-control"
@@ -51,6 +56,13 @@ uri="http://www.springframework.org/tags/form" %>
                           name="password"
                         />
                         <label>Password</label>
+                      </div>
+                      <div>
+                        <input
+                          type="hidden"
+                          name="${_csrf.parameterName}"
+                          value="${_csrf.token}"
+                        />
                       </div>
                       <div class="mt-4 mb-0">
                         <div class="d-grid">
