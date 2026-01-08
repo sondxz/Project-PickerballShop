@@ -1,13 +1,22 @@
 package vn.hoangson.pickerballshop.domain.DTO;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import vn.hoangson.pickerballshop.service.validator.RegisterChecked;
 
 @RegisterChecked
 public class RegisterDTO {
+    @Size(min = 3, message = "First name không được để trống")
     private String firstName;
+
     private String lastName;
+
+    @Email(message = "Email không đúng định dạng", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     private String email;
+
     private String password;
+
+    @Size(min = 3, message = "Confirm password không được để trống")
     private String confirmPassword;
     
     public String getFirstName() {
