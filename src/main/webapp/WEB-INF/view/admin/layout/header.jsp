@@ -12,18 +12,19 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <i class="fas fa-bars"></i>
   </button>
   <!-- Navbar Search-->
-  <form
-    class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
-  >
-    <div class="d-flex align-items-center justify-content-between">
-      <div class="input-group" style="width: 300px">
-        <input class="form-control" type="text" placeholder="Search for..." />
-        <button class="btn btn-primary" type="button">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-
-      <span class="text-white ms-3">Welcome, Hoàng Sơn</span>
+      <form
+        class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
+      >
+        <span style="color: white"
+          >Welcome, <%=request.getUserPrincipal().getName().toString()%>
+        </span>
+        <!-- <div class="input-group">
+    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+        aria-describedby="btnNavbarSearch" />
+    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
+            class="fas fa-search"></i></button>
+</div> -->
+      </form>
     </div>
   </form>
   <!-- Navbar-->
@@ -43,11 +44,21 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         aria-labelledby="navbarDropdown"
       >
         <li><a class="dropdown-item" href="#!">Settings</a></li>
-        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#!">Logout</a></li>
+
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li>
+          <form method="post" action="/logout">
+            <input
+              type="hidden"
+              name="${_csrf.parameterName}"
+              value="${_csrf.token}"
+            />
+            <button class="dropdown-item">Logout</button>
+          </form>
+        </li>
       </ul>
     </li>
   </ul>
 </nav>
-
