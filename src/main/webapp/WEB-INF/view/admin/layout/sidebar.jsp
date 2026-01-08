@@ -102,9 +102,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               data-bs-parent="#sidenavAccordionPages"
             >
               <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="login.html">Login</a>
-                <a class="nav-link" href="register.html">Register</a>
-                <a class="nav-link" href="password.html">Forgot Password</a>
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/register">Register</a>
               </nav>
             </div>
             <a
