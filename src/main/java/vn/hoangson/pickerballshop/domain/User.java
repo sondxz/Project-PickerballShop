@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -31,7 +32,7 @@ public class User {
     private String password;
 
     @NotNull(message = "Full name không được để trống")
-    @Size(min = 3,max = 50, message = "Full name phải có tối thiểu 3 ký tự")
+    @Size(min = 3, max = 50, message = "Full name phải có tối thiểu 3 ký tự")
     private String fullName;
 
     private String address;
@@ -44,7 +45,10 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "user")
-    private List<Order> orders;  
+    private List<Order> orders;
+
+    @OneToOne(mappedBy = "user")
+    private Cart cart;
 
     public Role getRole() {
         return role;
@@ -111,8 +115,6 @@ public class User {
         this.phone = phone;
     }
 
-    
-
     // toString method
     @Override
     public String toString() {
@@ -132,5 +134,13 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
