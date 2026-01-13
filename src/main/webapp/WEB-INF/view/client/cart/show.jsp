@@ -123,7 +123,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         type="text"
                         class="form-control form-control-sm text-center border-0"
                         value="${cartDetail.quantity}"
-
                         data-cart-detail-id="${cartDetail.id}"
                         data-cart-detail-price="${cartDetail.price}"
                       />
@@ -146,11 +145,21 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     </p>
                   </td>
                   <td>
-                    <button
-                      class="btn btn-md rounded-circle bg-light border mt-4"
+                    <form
+                      method="post"
+                      action="/delete-cart-product/${cartDetail.id}"
                     >
-                      <i class="fa fa-times text-danger"></i>
-                    </button>
+                      <input
+                        type="hidden"
+                        name="${_csrf.parameterName}"
+                        value="${_csrf.token}"
+                      />
+                      <button
+                        class="btn btn-md rounded-circle bg-light border mt-4"
+                      >
+                        <i class="fa fa-times text-danger"></i>
+                      </button>
+                    </form>
                   </td>
                 </tr>
               </c:forEach>
