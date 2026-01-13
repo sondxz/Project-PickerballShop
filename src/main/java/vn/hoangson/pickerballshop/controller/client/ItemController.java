@@ -1,5 +1,6 @@
 package vn.hoangson.pickerballshop.controller.client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -69,7 +70,7 @@ public class ItemController {
 
         Cart cart = this.productService.fetchByUser(currentUser);
         
-        List<CartDetail> cartDetails = cart.getCartDetails();
+        List<CartDetail> cartDetails = cart == null ? new ArrayList<CartDetail>() : cart.getCartDetails();
 
         double totalPrice = 0;
         for (CartDetail detail : cartDetails) {
@@ -78,7 +79,7 @@ public class ItemController {
 
         model.addAttribute("cartDetails", cartDetails);
         model.addAttribute("totalPrice", totalPrice);
-        
+
         return "client/cart/show";
     }
     
