@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.ui.Model;
+
+import vn.hoangson.pickerballshop.domain.Cart;
+import vn.hoangson.pickerballshop.domain.CartDetail;
 import vn.hoangson.pickerballshop.domain.Product;
+import vn.hoangson.pickerballshop.domain.User;
 import vn.hoangson.pickerballshop.service.ProductService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -57,7 +61,24 @@ public class ItemController {
     }
 
     @GetMapping("/cart")
-    public String getcartPage(Model model) {
+    public String getcartPage(Model model, HttpServletRequest request) {
+        User currentUser = new User();
+        HttpSession session = request.getSession(false);
+        long id = (long) session.getAttribute("id");
+        currentUser.setId(id);
+
+        Cart cart = this.productService.fetchByUser(currentUser);
+        
+        List<CartDetail> cartDetails = cart.getCartDetails();
+
+        double totalPrice = 0;
+        for (CartDetail detail : cartDetails) {
+            totalPrice += detail.getQuantity() * detail.getPrice();
+        }
+
+        model.addAttribute("cartDetails", cartDetails);
+        model.addAttribute("totalPrice", totalPrice);
+        
         return "client/cart/show";
     }
     
