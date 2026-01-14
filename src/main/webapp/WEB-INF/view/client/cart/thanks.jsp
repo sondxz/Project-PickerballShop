@@ -51,6 +51,19 @@ uri="http://java.sun.com/jsp/jstl/fmt" %>
 
     <jsp:include page="../layout/header.jsp" />
 
+    <div class="container-fluid page-header py-5">
+      <h1 class="text-center text-white display-6">Lịch sử mua hàng</h1>
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">
+          <a href="">Chi tiết sản phẩm</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Cảm ơn bạn đã đặt hàng
+        </li>
+      </ol>
+    </div>
+
     <div class="container" style="margin-top: 100px">
       <div class="row">
         <div class="col-12 mt-5">

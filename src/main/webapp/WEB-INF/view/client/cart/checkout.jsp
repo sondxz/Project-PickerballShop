@@ -55,20 +55,22 @@ uri="http://www.springframework.org/tags/form" %>
 
     <jsp:include page="../layout/header.jsp" />
 
+    <div class="container-fluid page-header py-5">
+      <h1 class="text-center text-white display-6">Lịch sử mua hàng</h1>
+      <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">
+          <a href="">Chi tiết sản phẩm</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Xác nhận thanh toán
+        </li>
+      </ol>
+    </div>
+
     <!-- Cart Page Start -->
     <div class="container-fluid py-5">
       <div class="container py-5">
-        <div class="mb-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Thông tin thanh toán
-              </li>
-            </ol>
-          </nav>
-        </div>
-
         <div class="table-responsive">
           <table class="table">
             <thead>

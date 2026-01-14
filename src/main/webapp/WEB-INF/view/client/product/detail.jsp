@@ -148,6 +148,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     type="text"
                     class="form-control form-control-sm text-center border-0"
                     value="1"
+                    data-cart-detail-index="0"
                   />
                   <div class="input-group-btn">
                     <button
@@ -157,12 +158,32 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     </button>
                   </div>
                 </div>
-                <a
-                  href="#"
-                  class="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
-                  ><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                  cart</a
+                <form
+                  action="/add-product-form-view-detail"
+                  method="post"
+                  modelAttribute="product"
                 >
+                  <input
+                    type="hidden"
+                    name="${_csrf.parameterName}"
+                    value="${_csrf.token}"
+                  />
+                  <input
+                    class="form-control d-none"
+                    type="text"
+                    value="${product.id}"
+                    name="id"
+                  />
+                  <input
+                    class="form-control d-none"
+                    type="text"
+                    name="quantity"
+                    id="cartDetailQuantity0.quantity"
+                  />
+                  <button class="mx-auto btn border border-secondary rounded">
+                    Add giỏ hàng
+                  </button>
+                </form>
               </div>
               <div class="col-lg-12">
                 <nav>
