@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import vn.hoangson.pickerballshop.domain.Role;
 import vn.hoangson.pickerballshop.domain.User;
 import vn.hoangson.pickerballshop.domain.DTO.RegisterDTO;
+import vn.hoangson.pickerballshop.repository.OrderRepository;
+import vn.hoangson.pickerballshop.repository.ProductRepository;
 import vn.hoangson.pickerballshop.repository.RoleRepository;
 import vn.hoangson.pickerballshop.repository.UserRepository;
 
@@ -14,10 +16,15 @@ import vn.hoangson.pickerballshop.repository.UserRepository;
 public class UserService {
     public final UserRepository userRepository;
     public final RoleRepository roleRepository;
+    public final OrderRepository orderRepository;
+    public final ProductRepository productRepository;
 
-    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, OrderRepository orderRepository,
+            ProductRepository productRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
     }
 
     public List<User> handleGetAllUsers() {
@@ -60,5 +67,17 @@ public class UserService {
 
     public User getUserByEmail(String email) {
         return this.userRepository.findByEmail(email);
+    }
+
+    public long countUsers() {
+        return this.userRepository.count();
+    }
+
+    public long countProducts() {
+        return this.productRepository.count();
+    }
+
+    public long countOrders() {
+        return this.orderRepository.count();
     }
 }
