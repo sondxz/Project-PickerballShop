@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <%@ taglib prefix="form"
+uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,7 +82,16 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               </tr>
             </thead>
             <tbody>
-              <c:forEach var="cartDetail" items="${cartDetails}">
+              <c:if test="${ empty cartDetails}">
+                <tr>
+                  <td colspan="6">Không có sản phẩm trong giỏ hàng</td>
+                </tr>
+              </c:if>
+              <c:forEach
+                var="cartDetail"
+                items="${cartDetails}"
+                varStatus="status"
+              >
                 <tr>
                   <th scope="row">
                     <div class="d-flex align-items-center">
@@ -125,6 +135,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         value="${cartDetail.quantity}"
                         data-cart-detail-id="${cartDetail.id}"
                         data-cart-detail-price="${cartDetail.price}"
+                        data-cart-detail-index="${status.index}"
                       />
                       <div class="input-group-btn">
                         <button
@@ -175,8 +186,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </h1>
                 <div class="d-flex justify-content-between mb-4">
                   <h5 class="mb-0 me-4">Tạm tính:</h5>
-                  <p class="mb-0" data-cart-total-price="${cartDetail.id}">
-                    <fmt:formatNumber type="number" value="${totalPrice}" />
+                  <p class="mb-0" data-cart-total-price="${totalPrice}">
+                    <fmt:formatNumber type="number" value="${totalPrice}" /> đ
                   </p>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -190,16 +201,54 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 class="py-4 mb-4 border-top border-bottom d-flex justify-content-between"
               >
                 <h5 class="mb-0 ps-4 me-4">Tổng số tiền:</h5>
-                <p class="mb-0 pe-4" data-cart-total-price="${cartDetail.id}">
+                <p class="mb-0 pe-4" data-cart-total-price="${totalPrice}">
                   <fmt:formatNumber type="number" value="${totalPrice}" /> đ
                 </p>
               </div>
-              <button
-                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                type="button"
+              <form:form
+                action="/confirm-checkout"
+                method="post"
+                modelAttribute="cart"
               >
-                Xác nhận thanh toán
-              </button>
+                <input
+                  type="hidden"
+                  name="${_csrf.parameterName}"
+                  value="${_csrf.token}"
+                />
+                <div style="display: none">
+                  <c:forEach
+                    var="cartDetail"
+                    items="${cart.cartDetails}"
+                    varStatus="status"
+                  >
+                    <div class="mb-3">
+                      <div class="form-group">
+                        <label>Id:</label>
+                        <form:input
+                          class="form-control"
+                          type="text"
+                          value="${cartDetail.id}"
+                          path="cartDetails[${status.index}].id"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label>Quantity:</label>
+                        <form:input
+                          class="form-control"
+                          type="text"
+                          value="${cartDetail.quantity}"
+                          path="cartDetails[${status.index}].quantity"
+                        />
+                      </div>
+                    </div>
+                  </c:forEach>
+                </div>
+                <button
+                  class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
+                >
+                  Xác nhận thanh toán
+                </button>
+              </form:form>
             </div>
           </div>
         </div>
