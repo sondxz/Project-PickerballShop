@@ -27,61 +27,84 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div class="container-fluid px-4">
             <h1 class="mt-4">Manage Products</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
               <li class="breadcrumb-item active">
-                Product
+                <a href="/admin">Dashboard</a>
               </li>
+              <li class="breadcrumb-item active">Product</li>
             </ol>
-              <div class="row">
-                <div class="col-12 mx-auto">
-                  <div class="d-flex justify-content-between">
-                    <h3>Table products</h3>
-                    <a href="/admin/product/create" class="btn btn-primary"
-                      >Create New Product</a
-                    >
-                  </div>
-                  <hr />
-                  <table class="table table-bordered table-hover">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Factory</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <c:forEach var="product" items="${products}">
-                        <tr>
-                          <td>${product.id}</td>
-                          <td>${product.name}</td>
-                          <td>${product.price}</td>
-                          <td>${product.factory}</td>
-                          <td class="d-flex justify-content-between">
-                            <a
-                              href="/admin/product/${product.id}"
-                              class="btn btn-success"
-                              >View</a
-                            >
-                            <a
-                              href="/admin/product/update/${product.id}"
-                              class="btn btn-warning"
-                              >Update</a
-                            >
-                            <a
-                              href="/admin/product/delete/${product.id}"
-                              class="btn btn-danger"
-                              >Delete</a
-                            >
-                          </td>
-                        </tr>
-                      </c:forEach>
-                    </tbody>
-                  </table>
+            <div class="row">
+              <div class="col-12 mx-auto">
+                <div class="d-flex justify-content-between">
+                  <h3>Table products</h3>
+                  <a href="/admin/product/create" class="btn btn-primary"
+                    >Create New Product</a
+                  >
                 </div>
+                <hr />
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Factory</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <c:forEach var="product" items="${products}">
+                      <tr>
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.factory}</td>
+                        <td class="d-flex justify-content-between">
+                          <a
+                            href="/admin/product/${product.id}"
+                            class="btn btn-success"
+                            >View</a
+                          >
+                          <a
+                            href="/admin/product/update/${product.id}"
+                            class="btn btn-warning"
+                            >Update</a
+                          >
+                          <a
+                            href="/admin/product/delete/${product.id}"
+                            class="btn btn-danger"
+                            >Delete</a
+                          >
+                        </td>
+                      </tr>
+                    </c:forEach>
+                  </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="/admin/product?page=1">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="/admin/product?page=2">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="/admin/product?page=3">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
+          </div>
         </main>
         <jsp:include page="../layout/footer.jsp" />
       </div>
@@ -93,4 +116,3 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script src="js/script.js"></script>
   </body>
 </html>
-
