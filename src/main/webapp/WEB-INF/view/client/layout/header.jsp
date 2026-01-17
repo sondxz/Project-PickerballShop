@@ -45,8 +45,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       </button>
       <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
         <div class="navbar-nav mx-auto">
-          <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
-          <a href="shop.html" class="nav-item nav-link">Sản phẩm</a>
+          <a href="/" class="nav-item nav-link active">Trang chủ</a>
+          <a href="/products" class="nav-item nav-link">Sản phẩm</a>
           <div class="nav-item dropdown">
             <a
               href="#"
@@ -55,11 +55,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               >Trang</a
             >
             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-              <a href="cart.html" class="dropdown-item">Giỏ hàng</a>
-              <a href="chackout.html" class="dropdown-item">Thanh toán</a>
+              <a href="/cart" class="dropdown-item">Giỏ hàng</a>
+              <a href="/checkout" class="dropdown-item">Thanh toán</a>
             </div>
           </div>
-          <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+          <a href="/contact" class="nav-item nav-link">Liên hệ</a>
         </div>
         <div class="d-flex m-3 me-0">
           <c:if test="${not empty pageContext.request.userPrincipal}">
