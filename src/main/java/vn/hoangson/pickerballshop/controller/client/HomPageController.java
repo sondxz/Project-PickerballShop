@@ -2,6 +2,9 @@ package vn.hoangson.pickerballshop.controller.client;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -18,25 +21,26 @@ import vn.hoangson.pickerballshop.service.ProductService;
 
 @Controller
 public class HomPageController {
-    
+
     private final ProductService productService;
     private final OrderService orderService;
 
-    
     public HomPageController(ProductService productService, OrderService orderService) {
         this.productService = productService;
         this.orderService = orderService;
     }
 
     @GetMapping("/")
-    public String getHomePage(Model model, HttpServletRequest request) {
-        List<Product> products = this.productService.fetchProduct();
-        model.addAttribute("products", products);
-        HttpSession session = request.getSession(false);
+    public String getHomePage(Model model) {
+        // List<Product> products = this.productService.fetchProduct();
+        Pageable pageable = PageRequest.of(0, 12);
+        Page<Product> prs = this.productService.fetchProduct(pageable);
+        List<Product> products = prs.getContent();
 
+        model.addAttribute("products", products);
         return "client/homepage/show";
     }
-    
+
     @GetMapping("/order-history")
     public String getOrderHistoryPage(Model model, HttpServletRequest request) {
         User currentUser = new User();// null
