@@ -3,6 +3,9 @@ package vn.hoangson.pickerballshop.controller.admin;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,9 +37,11 @@ public class ProductController {
 
     //READ
     @GetMapping("/admin/product")
-    public String getProduct(Model model) {
-        List<Product> products = this.productService.fetchProduct();
-        model.addAttribute("products", products);
+    public String getProduct(Model model, @RequestParam("page") int page) {
+        Pageable pageable = PageRequest.of(page - 1, 2);
+        Page<Product> prs = this.productService.fetchProduct(pageable);
+        List<Product> listProduct = prs.getContent();
+        model.addAttribute("products", listProduct);
         return "admin/product/show";
     }
     
