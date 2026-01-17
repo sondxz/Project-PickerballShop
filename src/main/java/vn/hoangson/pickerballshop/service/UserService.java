@@ -2,6 +2,8 @@ package vn.hoangson.pickerballshop.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import vn.hoangson.pickerballshop.domain.Role;
@@ -27,9 +29,8 @@ public class UserService {
         this.productRepository = productRepository;
     }
 
-    public List<User> handleGetAllUsers() {
-        List<User> users = this.userRepository.findAll();
-        return users;
+    public Page<User> handleGetAllUsers(Pageable pageable) { 
+        return this.userRepository.findAll(pageable);
     }
 
     public List<User> handleGetAllUsersByEmail(String email) {

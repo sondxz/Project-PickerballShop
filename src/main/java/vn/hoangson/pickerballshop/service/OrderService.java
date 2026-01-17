@@ -25,8 +25,8 @@ public class OrderService {
         this.orderRepository = orderRepository;
     }
 
-    public List<Order> fetchAllOrders() {
-        return this.orderRepository.findAll();
+    public Page<Order> fetchAllOrders(Pageable page) {
+        return this.orderRepository.findAll(page);
     }
 
     public Optional<Order> fetchOrderById(long id) {

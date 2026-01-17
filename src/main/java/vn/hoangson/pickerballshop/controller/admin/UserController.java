@@ -1,9 +1,14 @@
 package vn.hoangson.pickerballshop.controller.admin;
 
+import vn.hoangson.pickerballshop.domain.Order;
 import vn.hoangson.pickerballshop.domain.User;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -47,9 +52,23 @@ public class UserController {
     }
 
     @RequestMapping("/admin/user")
-    public String getUserPage(Model model) {
-        List<User> users = this.userService.handleGetAllUsers();
+    public String getUserPage(Model model, @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            if (pageOptional.isPresent()) {
+                page = Integer.parseInt(pageOptional.get());
+            } else {
+                // page = 1;
+            }
+        } catch (NumberFormatException e) {
+            // page = 1;
+        }
+        Pageable pageable = PageRequest.of(page - 1, 1);
+        Page<User> prs = this.userService.handleGetAllUsers(pageable);
+        List<User> users = prs.getContent();
         model.addAttribute("users1", users);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", prs.getTotalPages());
         return "admin/user/show";
     }
 
@@ -68,7 +87,8 @@ public class UserController {
     }
 
     @PostMapping(value = "/admin/user/create")
-    public String createUserPage(Model model, @ModelAttribute("newUser") @Valid User user, BindingResult newUserBindingResult,
+    public String createUserPage(Model model, @ModelAttribute("newUser") @Valid User user,
+            BindingResult newUserBindingResult,
             @RequestParam("avatarFile") MultipartFile file) {
         List<FieldError> errors = newUserBindingResult.getFieldErrors();
         for (FieldError error : errors) {
@@ -76,22 +96,22 @@ public class UserController {
                     + "': " + error.getDefaultMessage());
         }
 
-        //validate
+        // validate
         if (newUserBindingResult.hasErrors()) {
             return "admin/user/create";
         }
-        
+
         // Handle upload file
         String avatar = this.uploadService.handleUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(user.getPassword());
         System.out.println("Creating user..." + user);
 
-        //set gia tri
+        // set gia tri
         user.setAvatar(avatar);
         user.setPassword(hashPassword);
         user.setRole(this.userService.getRoleByName(user.getRole().getName()));
 
-        //save
+        // save
         this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }

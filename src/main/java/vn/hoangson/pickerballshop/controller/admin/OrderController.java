@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.hoangson.pickerballshop.domain.Order;
+import vn.hoangson.pickerballshop.domain.Product;
 import vn.hoangson.pickerballshop.service.OrderService;
 
 @Controller
@@ -27,10 +28,24 @@ public class OrderController {
     }
 
     @GetMapping("/admin/order")
-    public String getDashboard(Model model) {
-        List<Order> orders = this.orderService.fetchAllOrders();
-
+    public String getDashboard(Model model, @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            if(pageOptional.isPresent()) {
+                page = Integer.parseInt(pageOptional.get());
+            } else {
+                // page = 1;
+            }
+        } catch (NumberFormatException e) {
+            // page = 1;
+        }
+        Pageable pageable = PageRequest.of(page - 1, 1);
+        Page<Order> prs = this.orderService.fetchAllOrders(pageable);
+        List<Order> orders = prs.getContent();
         model.addAttribute("orders", orders);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", prs.getTotalPages());
+
         return "admin/order/show";
     }
 

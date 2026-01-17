@@ -37,7 +37,17 @@ public class ProductController {
 
     //READ
     @GetMapping("/admin/product")
-    public String getProduct(Model model, @RequestParam("page") int page) {
+    public String getProduct(Model model, @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            if(pageOptional.isPresent()) {
+                page = Integer.parseInt(pageOptional.get());
+            } else {
+                // page = 1;
+            }
+        } catch (NumberFormatException e) {
+            // page = 1;
+        }
         Pageable pageable = PageRequest.of(page - 1, 5);
         Page<Product> prs = this.productService.fetchProduct(pageable);
         List<Product> listProduct = prs.getContent();
