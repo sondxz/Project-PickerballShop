@@ -19,6 +19,7 @@ import vn.hoangson.pickerballshop.repository.CartRepository;
 import vn.hoangson.pickerballshop.repository.OrderDetailRepository;
 import vn.hoangson.pickerballshop.repository.OrderRepository;
 import vn.hoangson.pickerballshop.repository.ProductRepository;
+import vn.hoangson.pickerballshop.service.specification.ProductSpecs;
 
 @Service
 public class ProductService {
@@ -42,6 +43,10 @@ public class ProductService {
 
     public Page<Product> fetchProduct(Pageable page) {
         return this.productRepository.findAll(page);
+    }
+
+    public Page<Product> fetchProductWithSpec(Pageable page, String name) {
+        return this.productRepository.findAll(ProductSpecs.nameLike(name), page);
     }
 
     public Product createProduct(Product product) {

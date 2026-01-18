@@ -24,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.validation.Valid;
 
-
 @Controller
 public class ProductController {
     private final ProductService productService;
@@ -35,12 +34,12 @@ public class ProductController {
         this.uploadService = uploadService;
     }
 
-    //READ
+    // READ
     @GetMapping("/admin/product")
     public String getProduct(Model model, @RequestParam("page") Optional<String> pageOptional) {
         int page = 1;
         try {
-            if(pageOptional.isPresent()) {
+            if (pageOptional.isPresent()) {
                 page = Integer.parseInt(pageOptional.get());
             } else {
                 // page = 1;
@@ -56,8 +55,8 @@ public class ProductController {
         model.addAttribute("totalPages", prs.getTotalPages());
         return "admin/product/show";
     }
-    
-    //CREATE
+
+    // CREATE
     @GetMapping("/admin/product/create")
     public String getCreateProductPage(Model model) {
         model.addAttribute("newProduct", new Product());
@@ -68,21 +67,21 @@ public class ProductController {
     public String postCreateProductPage(Model model, @ModelAttribute("newProduct") @Valid Product product,
             BindingResult newProductBindingResult, @RequestParam("productFile") MultipartFile file) {
 
-        //validate
+        // validate
         if (newProductBindingResult.hasErrors()) {
             return "admin/product/create";
         }
 
-        //upload file
+        // upload file
         String images = this.uploadService.handleUploadFile(file, "products");
         product.setImage(images);
 
-        //TODO: process POST request
+        // TODO: process POST request
         this.productService.createProduct(product);
         return "redirect:/admin/product";
     }
 
-    //DELETE
+    // DELETE
     @GetMapping("/admin/product/delete/{id}")
     public String getDeleteProduct(Model model, @PathVariable long id) {
         model.addAttribute("id", id);
@@ -95,8 +94,8 @@ public class ProductController {
         this.productService.deleteProduct(product.getId());
         return "redirect:/admin/product";
     }
-    
-    //DETAIL
+
+    // DETAIL
     @GetMapping("/admin/product/{id}")
     public String getProductDetail(Model model, @PathVariable long id) {
         Product product = this.productService.fetchProductById(id).get();
@@ -104,8 +103,8 @@ public class ProductController {
         model.addAttribute("id", id);
         return "admin/product/detail";
     }
-    
-    //UPDATE
+
+    // UPDATE
     @GetMapping("/admin/product/update/{id}")
     public String getUpdateProductPage(@PathVariable long id, Model model) {
         Optional<Product> optionalProduct = this.productService.fetchProductById(id);
@@ -119,20 +118,20 @@ public class ProductController {
             BindingResult newProductBindingResult,
             @RequestParam("productFile") MultipartFile file) {
 
-        //validate
+        // validate
         if (newProductBindingResult.hasErrors()) {
             return "admin/product/update";
         }
 
-        //upload file
+        // upload file
         Product currentProduct = this.productService.fetchProductById(product.getId()).get();
-        if(currentProduct != null) {
-            //upload new image
+        if (currentProduct != null) {
+            // upload new image
             if (!file.isEmpty()) {
                 String images = this.uploadService.handleUploadFile(file, "products");
                 currentProduct.setImage(images);
             }
-            
+
             currentProduct.setName(product.getName());
             currentProduct.setPrice(product.getPrice());
             currentProduct.setDetailDesc(product.getDetailDesc());
