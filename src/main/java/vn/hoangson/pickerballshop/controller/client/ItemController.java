@@ -18,6 +18,7 @@ import vn.hoangson.pickerballshop.domain.Cart;
 import vn.hoangson.pickerballshop.domain.CartDetail;
 import vn.hoangson.pickerballshop.domain.Product;
 import vn.hoangson.pickerballshop.domain.User;
+import vn.hoangson.pickerballshop.domain.DTO.ProductCriteriaDTO;
 import vn.hoangson.pickerballshop.service.ProductService;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -147,22 +148,20 @@ public class ItemController {
     }
 
     @GetMapping("/products")
-    public String getProductPage(Model model, @RequestParam("page") Optional<String> pageOptional,
-            @RequestParam("name") Optional<String> nameOptional) {
+    public String getProductPage(Model model, ProductCriteriaDTO productCriteriaDTO) {
         int page = 1;
         try {
-            if (pageOptional.isPresent()) {
-                page = Integer.parseInt(pageOptional.get());
+            if (productCriteriaDTO.getPage().isPresent()) {
+                page = Integer.parseInt(productCriteriaDTO.getPage().get());
             } else {
                 // page = 1;
             }
         } catch (NumberFormatException e) {
             // page = 1;
         }
-        String name = nameOptional.isPresent() ? nameOptional.get() : "";
+        Pageable pageable = PageRequest.of(page - 1, 60);
 
-        Pageable pageable = PageRequest.of(page - 1, 6);
-        Page<Product> prs = this.productService.fetchProductWithSpec(pageable, name);
+        Page<Product> prs = this.productService.fetchProduct(pageable);
         List<Product> products = prs.getContent();
         model.addAttribute("products", products);
         model.addAttribute("currentPage", page);
