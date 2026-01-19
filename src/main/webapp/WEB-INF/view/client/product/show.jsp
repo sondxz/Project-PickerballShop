@@ -181,15 +181,15 @@
 
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="price-3"
-                                                        value="2-5-trieu">
+                                                        value="2-4-trieu">
                                                     <label class="form-check-label" for="price-3">Từ 2 - 5
                                                         triệu</label>
                                                 </div>
 
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="price-4"
-                                                        value="5-6-trieu">
-                                                    <label class="form-check-label" for="price-4">Từ 5 - 6
+                                                        value="4-6-trieu">
+                                                    <label class="form-check-label" for="price-4">Từ 4 - 6
                                                         triệu</label>
                                                 </div>
 
